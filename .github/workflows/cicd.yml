@@ -11,6 +11,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+       nowUsername: ${{ secrets.SN_USERNAME }}
+       nowPassword: ${{ secrets.SN_PASSWORD }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
