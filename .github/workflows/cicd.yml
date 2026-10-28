@@ -59,4 +59,9 @@ jobs:
           echo "Resolved ServiceNow instance: $INSTANCE"
           echo "SN_INSTANCE=$INSTANCE" >> "$GITHUB_ENV"
 
-      # TODO: Add the pipeline credentials (job-level env block) and the apply changes step here
+      - name: Apply changes
+        uses: ServiceNow/sncicd-apply-changes@2.0.0
+        continue-on-error: true
+        env:
+          nowSourceInstance: ${{ vars.SN_INSTANCE }}
+          appScope: x_cd_grc_app
