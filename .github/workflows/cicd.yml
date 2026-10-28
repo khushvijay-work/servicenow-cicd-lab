@@ -60,7 +60,7 @@ jobs:
           echo "SN_INSTANCE=$INSTANCE" >> "$GITHUB_ENV"
 
       - name: Apply changes
-        uses: ServiceNow/sncicd-apply-changes@2.0.0
+        uses: ServiceNow/sncicd-apply-changes@1.2.1
         continue-on-error: true
         env:
           nowSourceInstance: ${{ env.SN_INSTANCE }}
