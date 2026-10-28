@@ -63,5 +63,5 @@ jobs:
         uses: ServiceNow/sncicd-apply-changes@2.0.0
         continue-on-error: true
         env:
-          nowSourceInstance: ${{ vars.SN_INSTANCE }}
+          nowSourceInstance: env.SN_INSTANCE
           appScope: x_cd_grc_app
